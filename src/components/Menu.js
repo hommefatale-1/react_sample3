@@ -1,5 +1,5 @@
 import "./Menu.css";
-import Profil from '../page/Profil';
+import Profile from '../page/Profile';
 
 function Menu(props){
 
