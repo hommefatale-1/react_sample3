@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 
 
@@ -10,14 +12,16 @@ function Main() {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-    
+
     async function fetchLogin() {
         try {
             const response = await fetch(`http://localhost:4000/userLogin.dox?userId=${userId}&password=${password}`);
             const jsonData = await response.json();
             console.log(jsonData);
             if (jsonData.result == "success") {
+                sessionStorage.setItem('userId', userId);     // sessionStrorage에 저장
                 alert("로그인이 되었습니다.");
+
             } else {
                 alert("로그인에 실패 하셨습니다.");
             }
@@ -37,10 +41,22 @@ function Main() {
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <div>
                             <div>
-                                <input onChange={handleUserIdChange} value={userId} style={{ borderRadius: '5px', width: '260px', height: '30px', margin: '5px', textAlign: 'center' }} type="text" placeholder="전화번호, 사용자 이름 또는 이메일"></input>
+                                <input
+                                    type="text"
+                                    placeholder="전화번호, 사용자 이름 또는 이메일"
+                                    onChange={handleUserIdChange}
+                                    value={userId}
+                                    style={{ borderRadius: '5px', width: '260px', height: '30px', margin: '5px', textAlign: 'center' }}
+                                ></input>
                             </div>
                             <div>
-                                <input onChange={handlePasswordChange} value={password} style={{ borderRadius: '5px', width: '260px', height: '30px', margin: '5px', textAlign: 'center' }} type="password" placeholder="비밀번호"></input>
+                                <input
+                                    type="password"
+                                    placeholder="비밀번호"
+                                    onChange={handlePasswordChange}
+                                    value={password}
+                                    style={{ borderRadius: '5px', width: '260px', height: '30px', margin: '5px', textAlign: 'center' }}
+                                ></input>
                             </div>
                             <div style={{ padding: '5px' }}></div>
                             <div>
@@ -68,7 +84,9 @@ function Main() {
                 <div style={{ padding: '10px' }}></div>
                 <div style={{ padding: '20px', textAlign: 'center', border: '1px solid black' }}>
                     <span>계정이 없으신가요?</span>
-                    <button style={{ color: 'blue', border: 'none', background: 'none' }}>가입하기</button>
+                    <Link to="/join">
+                        <button style={{ color: 'blue', border: 'none', background: 'none' }}>가입하기</button>
+                    </Link>
                 </div>
                 <div style={{ padding: '5px' }}></div>
                 <div style={{ textAlign: 'center' }}>

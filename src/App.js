@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './page/Main';
-import Login from './page/Login';
+import Join from './page/Join';
 import Home from './page/Home';
 import Profile from './page/Profile';
 import Nav from './components/Nav';
@@ -15,7 +15,7 @@ function App() {
     <Nav></Nav>
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/Login' element={<Login></Login>}></Route>
+        <Route path='/Join' element={<Join></Join>}></Route>
         <Route path='/Profile' element={<Profile></Profile>}></Route>
       </Routes>
     </Router>
