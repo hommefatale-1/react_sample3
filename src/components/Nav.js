@@ -7,6 +7,7 @@ function Nav(){
             <li><Link to="/">홈</Link></li>
             <li><Link to="/join">회원가입</Link></li>
             <li><Link to="/Profile">프로필</Link></li>
+            <li><Link to="/ReProfile">프로필 편집</Link></li>
         </ul>
     </nav>)
 }

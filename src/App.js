@@ -6,6 +6,7 @@ import Profile from './page/Profile';
 import Nav from './components/Nav';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ReProfile from './page/ReProfile';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/Join' element={<Join></Join>}></Route>
+        <Route path='/ReProfile' element={<ReProfile></ReProfile>}></Route>
         <Route path='/Profile' element={<Profile></Profile>}></Route>
       </Routes>
     </Router>
