@@ -160,7 +160,7 @@ function Profile() {
           <div style={{ display: 'flex', flexDirection: 'row', height: '252px', width: '802px', border: '1px solid black' }} className='flex-column'>
             <div style={{ padding: '10px' }}></div>
             <div style={{ margin: '10px' }} className='d-flex align-items-'>
-              <div style={{ position: 'relative', width: '100px', height: '100px', borderRadius: '20%', overflow: 'hidden', marginRight: '10px' }}>
+              <div style={{ position: 'relative', width: '200px', height: '150px', borderRadius: '50%', overflow: 'hidden', marginRight: '10px' }}>
                 <img
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   src={Array.isArray(profile) ? profile[0]?.profile_pic : profile?.profile_pic}
@@ -169,7 +169,7 @@ function Profile() {
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
                   <div style={{ marginRight: '5px' }}>
-                    <span>{Array.isArray(profile) ? profile[0].userId : profile.userId}</span>
+                    <span>{Array.isArray(profile) ? profile[0].userId : profile?.userId}</span>
                   </div>
                   <div style={{ marginRight: '5px' }}>
                     <button>프로필 편집</button>
@@ -179,7 +179,7 @@ function Profile() {
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
-                  <div style={{ marginBottom: '10px' }}>
+                  <div style={{ marginBottom: '70px' }}>
                     <span>게시물: </span>
                     <strong>{Array.isArray(profile) ? profile[0].posts : profile.posts}</strong>
                   </div>
