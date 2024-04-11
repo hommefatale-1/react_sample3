@@ -15,7 +15,7 @@ function App() {
     <Router>
     <Nav></Nav>
       <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
+        <Route path='/Main' element={<Main></Main>}></Route>
         <Route path='/Join' element={<Join></Join>}></Route>
         <Route path='/ReProfile' element={<ReProfile></ReProfile>}></Route>
         <Route path='/Profile' element={<Profile></Profile>}></Route>

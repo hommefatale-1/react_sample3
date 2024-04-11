@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import { useState, React} from 'react';
-
+import { Link,useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
 function Main() {
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleUserIdChange = (e) => {
         setUserId(e.target.value);
@@ -21,7 +21,7 @@ function Main() {
             if (jsonData.result == "success") {
                 sessionStorage.setItem('userId', userId);     // sessionStrorage에 저장
                 alert("로그인이 되었습니다.");
-
+                navigate("/Profile");
             } else {
                 alert("로그인에 실패 하셨습니다.");
             }
